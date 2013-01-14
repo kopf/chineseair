@@ -1,34 +1,60 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Chineseair by kopf</title>
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Chineseair</h1>
-        <p>Graphing levels of air pollution in Chinese cities</p>
-
-        <p class="view"><a href="https://github.com/kopf/chineseair">View the Project on GitHub <small>kopf/chineseair</small></a></p>
-
-
-        <ul>
-          <li><a href="https://github.com/kopf/chineseair/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/kopf/chineseair/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/kopf/chineseair">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>Chinese Air</h1>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <title>Chineseair by kopf</title>
+        <link rel="stylesheet" href="stylesheets/styles.css">
+        <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <script type="text/javascript" id="chineseair_data_population">
+            function populateData(data) {
+                data.addRows([
+                    [new Date(2008, 1 ,1), 30000, undefined, undefined],
+                    [new Date(2008, 1 ,2), 14045, undefined, undefined],
+                    [new Date(2008, 1 ,3), 55022, undefined, undefined],
+                    [new Date(2008, 1 ,4), 75284, undefined, undefined],
+                    [new Date(2008, 1 ,5), 41476, 'Some title','some text explanation'],
+                    [new Date(2008, 1 ,6), 33322, undefined, undefined]
+                ]);
+                return data;
+            }
+        </script>
+        <script type='text/javascript' src='http://www.google.com/jsapi'></script>
+        <script type='text/javascript'>
+            google.load('visualization', '1', {'packages':['annotatedtimeline']});
+            google.setOnLoadCallback(drawChart);
+            function drawChart() {
+                var data = new google.visualization.DataTable();
+                data.addColumn('date', 'Date');
+                data.addColumn('number', 'Pollution level');
+                data.addColumn('string', 'title1');
+                data.addColumn('string', 'text1');
+                data = populateData(data);
+                var chart = new google.visualization.AnnotatedTimeLine(document.getElementById('chart_div'));
+                chart.draw(data, {displayAnnotations: true});
+            }
+        </script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <!--
+            <header>
+                <h1>Chineseair</h1>
+                <p>Graphing levels of air pollution in Chinese cities</p>
+                <p class="view"><a href="https://github.com/kopf/chineseair">View the Project on GitHub <small>kopf/chineseair</small></a></p>
+                <ul>
+                    <li><a href="https://github.com/kopf/chineseair/zipball/master">Download <strong>ZIP File</strong></a></li>
+                    <li><a href="https://github.com/kopf/chineseair/tarball/master">Download <strong>TAR Ball</strong></a></li>
+                    <li><a href="https://github.com/kopf/chineseair">View On <strong>GitHub</strong></a></li>
+                </ul>
+            </header>
+            -->
+            <section>
+                <h1>Chinese Air</h1>
 
 <p>Reports of high levels of air pollution in China are nothing new, but <a href="http://www.bbc.co.uk/news/world-asia-china-21007893">recent reports</a> have startled many. These are reports of air quality levels so low that even the usually docile citizenry has begun to protest. </p>
 
@@ -38,16 +64,18 @@
 
 <h2>Current Pollution Levels</h2>
 
-<div></div>
+<div id='chart_div' style='width: 700px; height: 240px;'></div>
 
 <h2>About me</h2>
 
 <p>I'm <a href="http://ventolin.org">Aengus Walton</a>, a software engineer from Ireland, currently living in Germany. You can <a href="http://github.com/kopf">see some of my open-source projects here</a>, and <a href="http://ventolin.org">read my (much neglected) blog here</a>. </p>
       </section>
+      <!--
       <footer>
         <p>This project is maintained by <a href="https://github.com/kopf">kopf</a></p>
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
+      -->
     </div>
     <script src="javascripts/scale.fix.js"></script>
               <script type="text/javascript">
