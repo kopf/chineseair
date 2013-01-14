@@ -21,7 +21,7 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size:28px;
+  font-size:34px;
 }
 
 h2 {
@@ -160,7 +160,6 @@ header ul a strong {
 }
 
 section {
-  width:500px;
   float:right;
   padding-bottom:50px;
 }
@@ -252,4 +251,10 @@ footer {
     font-size:12pt;
     color:#444;
   }
+}
+
+
+
+#chart_div {
+  margin-bottom: 3em;
 }
