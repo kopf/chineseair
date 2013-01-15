@@ -1218,21 +1218,22 @@
 [new Date(2012, 8, 8, 8, 0, 0), 97],
 [new Date(2012, 8, 8, 7, 0, 0), 108],
 [new Date(2012, 8, 8, 6, 0, 0), 113],
-[new Date(2013, 0, 16, 4, 0, 0), 118]
+[new Date(2013, 0, 16, 4, 0, 0), 118],
+[new Date(2013, 0, 16, 5, 0, 0), 105]
         ]);
         return data;
     
             }
         </script>
 
-    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
-    <script type="text/javascript">
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
         function addMonths(date, months) {
             date.setMonth(date.getMonth() + months);
             return date;
         }
     </script>
-    <script type="text/javascript">
+<script type="text/javascript">
         google.load('visualization', '1', {'packages':['annotatedtimeline']});
         google.setOnLoadCallback(drawChart);
         function drawChart() {
