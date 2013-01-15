@@ -32,7 +32,7 @@ def update_webpage():
     for entry in data:
         for timestr, value in entry.iteritems():
             t = time.strptime(timestr, '%m-%d-%Y %H:%M')
-            datapoints.append(datapoint.format(year=t.tm_year, month=t.tm_mon,
+            datapoints.append(datapoint.format(year=t.tm_year, month=t.tm_mon - 1,
                                                date=t.tm_mday, hour=t.tm_hour,
                                                value=value))
     datapoints = ',\n'.join(datapoints)
