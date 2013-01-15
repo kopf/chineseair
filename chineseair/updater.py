@@ -6,18 +6,19 @@ import twitter
 
 FEEDS = ['beijingair', 'CGShanghaiAir', 'CGChengduAir', 'Guangzhou_Air']
 
-with open(filename) as f:
-    AUTH = f.read()
-API = twitter.Api(**auth)
+with open('auth.json') as f:
+    AUTH = json.loads(f.read())
+API = twitter.Api(**AUTH)
 
 def update_webpage():
     pass
 
 def update_feed(feed):
-    if not os.path.exists('%s.json' % feed):
+    filename = '%s.json' % feed
+    if not os.path.exists(filename):
         total_data = []
     else:
-        with open('%s.json' % feed, 'r') as f:
+        with open(filename, 'r') as f:
             total_data = json.loads(f.read)
     finished = False
     page = 1
@@ -26,8 +27,14 @@ def update_feed(feed):
         finished, total_data = get_new_tweets(feed, page, total_data)
         page += 1
 
+    print 'Saving %s' % filename
+    with open(filename, 'w') as f:
+        f.write(json.dumps(total_data))
+
 def get_new_tweets(feed, page, total_data):
-    tweets = api.GetUserTimeline(feed, count=200, page=page)
+    tweets = API.GetUserTimeline(feed, count=200, page=page)
+    if not tweets:
+        return True, total_data
     finished = False
     for tweet in tweets:
         try:
@@ -48,6 +55,6 @@ def process_tweet(tweet):
     return tweet.text.split('; ')
 
 if __name__ == '__main__':
-    for feed in feeds:
+    for feed in FEEDS:
         update_feed(feed)
     update_webpage()
