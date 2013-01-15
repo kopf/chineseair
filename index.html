@@ -1217,7 +1217,8 @@
 [new Date(2012, 9, 8, 9, 0, 0), 99],
 [new Date(2012, 9, 8, 8, 0, 0), 97],
 [new Date(2012, 9, 8, 7, 0, 0), 108],
-[new Date(2012, 9, 8, 6, 0, 0), 113]
+[new Date(2012, 9, 8, 6, 0, 0), 113],
+[new Date(2013, 1, 16, 4, 0, 0), 118]
         ]);
         return data;
     
@@ -1232,8 +1233,6 @@
                 var data = new google.visualization.DataTable();
                 data.addColumn('date', 'Date');
                 data.addColumn('number', 'Pollution level');
-                data.addColumn('string', 'title1');
-                data.addColumn('string', 'text1');
                 data = populateData(data);
                 var chart = new google.visualization.AnnotatedTimeLine(document.getElementById('chart_div'));
                 chart.draw(data, {displayAnnotations: true});
@@ -1263,7 +1262,6 @@
 <div id="chart_div" style="width: 700px; height: 240px;"></div>
 <h2>About me</h2>
 <p>I'm <a href="http://ventolin.org">Aengus Walton</a>, a software engineer from Ireland, currently living in Germany. You can <a href="http://github.com/kopf">see some of my open-source projects here</a>, and <a href="http://ventolin.org">read my (much neglected) blog here</a>. </p>
-
 <!--
       <footer>
         <p>This project is maintained by <a href="https://github.com/kopf">kopf</a></p>
