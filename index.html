@@ -1241,7 +1241,11 @@
             data.addColumn('number', 'Pollution level');
             data = populateData(data);
             var chart = new google.visualization.AnnotatedTimeLine(document.getElementById('chart_div'));
-            chart.draw(data, {displayAnnotations: true, zoomStartTime: addMonths(new Date(), -2)});
+            chart.draw(data, {
+                displayAnnotations: true,
+                zoomStartTime: addMonths(new Date(), -2),
+                dateFormat: 'HH:mm MMMM dd, yyyy'
+            });
         }
     </script>
 </head>
