@@ -22,7 +22,7 @@ def update_feed(feed):
         total_data = []
     else:
         with open(filename, 'r') as f:
-            total_data = json.loads(f.read)
+            total_data = json.loads(f.read())
     finished = False
     page = 1
     while not finished:
