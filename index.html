@@ -3184,6 +3184,7 @@
         }
     </script>
 <script type="text/javascript">
+        var chart;
         google.load('visualization', '1', {'packages':['annotatedtimeline']});
         google.setOnLoadCallback(drawChart);
         function drawChart() {
@@ -3194,7 +3195,7 @@
             data.addColumn('number', 'Chengdu');
             data.addColumn('number', 'Guangzhou');
             data = populateData(data);
-            var chart = new google.visualization.AnnotatedTimeLine(document.getElementById('chart_div'));
+            chart = new google.visualization.AnnotatedTimeLine(document.getElementById('chart_div'));
             chart.draw(data, {
                 displayAnnotations: true,
                 zoomStartTime: addMonths(new Date(), -2),
@@ -3215,6 +3216,13 @@
 <p>I think these twitter accounts are a great idea but they have one problem: it's rather difficult to digest the information (points on the <a href="http://www.airnow.gov/index.cfm?action=aqibasics.aqi">Air Quality Index</a>) in tweet form. Twitter does a great job at getting the information out there, but to properly consume it, you really need a graph. So, one evening I decided to hack this page together.</p>
 <p>The graphs will update hourly, just as the twitter feeds do.</p>
 <h2>Current Pollution Levels</h2>
+<form>
+<label><input type="checkbox" onclick="javascript:toggleDisplayGraph(1)" name='Beijing'/> Beijing</label>
+<label><input type="checkbox" onclick="javascript:toggleDisplayGraph(2)" name='Beijing'/> Shanghai</label>
+<label><input type="checkbox" onclick="javascript:toggleDisplayGraph(3)" name='Beijing'/> Chengdu</label>
+<label><input type="checkbox" onclick="javascript:toggleDisplayGraph(4)" name='Beijing'/> Guangzhou</label>
+</form>
+
 <div id="chart_div" style="width: 700px; height: 340px;"></div>
 <h2>Twitter API Restrictions</h2>
 <p>Unfortunately, twitter has a limit on how far back developers can go when downloading tweets from an account.
