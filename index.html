@@ -3182,6 +3182,14 @@
             date.setMonth(date.getMonth() + months);
             return date;
         }
+        function toggleDisplayGraph(i) {
+            var checkbox = document.getElementById('togglebox_' + i);
+            if(checkbox.checked) {
+                chart.showDataColumns(i);
+            } else {
+                chart.hideDataColumns(i);
+            }
+        }
     </script>
 <script type="text/javascript">
         var chart;
@@ -3217,10 +3225,10 @@
 <p>The graphs will update hourly, just as the twitter feeds do.</p>
 <h2>Current Pollution Levels</h2>
 <form>
-<label><input type="checkbox" onclick="javascript:toggleDisplayGraph(1)" name='Beijing'/> Beijing</label>
-<label><input type="checkbox" onclick="javascript:toggleDisplayGraph(2)" name='Beijing'/> Shanghai</label>
-<label><input type="checkbox" onclick="javascript:toggleDisplayGraph(3)" name='Beijing'/> Chengdu</label>
-<label><input type="checkbox" onclick="javascript:toggleDisplayGraph(4)" name='Beijing'/> Guangzhou</label>
+<label><input type="checkbox" onclick="javascript:toggleDisplayGraph(0)" name='Beijing' id="togglebox_0" checked /> Beijing</label>
+<label><input type="checkbox" onclick="javascript:toggleDisplayGraph(1)" name='Shanghai' id="togglebox_1" checked /> Shanghai</label>
+<label><input type="checkbox" onclick="javascript:toggleDisplayGraph(2)" name='Chengdu' id="togglebox_2" checked /> Chengdu</label>
+<label><input type="checkbox" onclick="javascript:toggleDisplayGraph(3)" name='Guangzhou' id="togglebox_3" checked /> Guangzhou</label>
 </form>
 
 <div id="chart_div" style="width: 700px; height: 340px;"></div>
