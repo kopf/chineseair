@@ -3178,8 +3178,8 @@
 
 <script type="text/javascript" src="http://www.google.com/jsapi"></script>
 <script type="text/javascript">
-        function addMonths(date, months) {
-            date.setMonth(date.getMonth() + months);
+        function subtractDays(date, days) {
+            date.setDate(date.getDate() - days);
             return date;
         }
         function toggleDisplayGraph(i) {
@@ -3206,7 +3206,7 @@
             chart = new google.visualization.AnnotatedTimeLine(document.getElementById('chart_div'));
             chart.draw(data, {
                 displayAnnotations: true,
-                zoomStartTime: addMonths(new Date(), -2),
+                zoomStartTime: subtractDays(new Date(), 7),
                 dateFormat: 'HH:mm MMMM dd, yyyy'
             });
         }
