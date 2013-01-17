@@ -5,7 +5,6 @@ import json
 import os
 import time
 
-from BeautifulSoup import BeautifulSoup
 import twitter
 
 
@@ -28,7 +27,7 @@ def update_webpage():
     with open('data.json', 'r') as f:
         data = json.loads(f.read())
     datapoints = []
-    print 'Constructing HTML...'
+    print 'Constructing JS...'
     for timestr, values in data.iteritems():
         t = time.strptime(timestr, '%m-%d-%Y %H:%M')
         datapoints.append(datapoint.format(year=t.tm_year, month=t.tm_mon - 1,
@@ -38,20 +37,14 @@ def update_webpage():
                                            chengdu=values.get('CGChengduAir', 'undefined'),
                                            guangzhou=values.get('Guangzhou_Air', 'undefined')))
     datapoints = ',\n'.join(datapoints)
-    html = '''
-        <script type="text/javascript" id="chineseair_data_population">
+    js = '''
             function populateData(data) {
                 %s
             }
-        </script>
     ''' % template.format(datapoints=datapoints)
-    print 'Inserting HTML...'
-    with open('../index.html', 'r') as f:
-        soup = BeautifulSoup(f.read())
-    element = soup.find('script', {'id': 'chineseair_data_population'})
-    element.replaceWith(BeautifulSoup(html))
-    with open('../index.html', 'w') as f:
-        f.write(str(soup))
+    print 'Writing to data.js...'
+    with open('../javascripts/data.js', 'w') as f:
+        f.write(js)
     print 'Done!'
 
 
