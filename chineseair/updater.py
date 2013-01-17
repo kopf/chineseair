@@ -36,7 +36,7 @@ def update_webpage():
                                            shanghai=values.get('CGShanghaiAir', 'undefined'),
                                            chengdu=values.get('CGChengduAir', 'undefined'),
                                            guangzhou=values.get('Guangzhou_Air', 'undefined')))
-    datapoints = ',\n'.join(datapoints)
+    datapoints = ',\n'.join(sorted(datapoints))
     js = '''
             function populateData(data) {
                 %s
