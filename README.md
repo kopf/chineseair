@@ -1,7 +1,9 @@
-# Chinese Air
+# [Chinese Air](http://kopf.github.com/chineseair/)
 
-Visually representing historical information about air quality in several major Chinese centers: Beijing, Shanghai, Guangzhou & Chengdu.
+Graphing air quality readings from several major Chinese centers: Beijing, Shanghai, Guangzhou & Chengdu.
 
-[Chinese Air](http://kopf.github.com/chineseair/)
+These files may be of interest:
 
-Data sourced from the relevant twitter accounts for the United States Embassies in China.
+* `chineseair/updater.py`, which scrapes the data from twitter feeds, saving it to
+* `javascripts/data.js`, which is loaded inside
+* `index.html`
