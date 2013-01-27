@@ -69,7 +69,7 @@ def update_feeds():
 
     print 'Saving %s' % filename
     with open(filename, 'w') as f:
-        f.write(json.dumps(total_data))
+        f.write(json.dumps(total_data, indent=4))
 
 
 def get_new_tweets(feed, page, total_data):
