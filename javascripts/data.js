@@ -3380,7 +3380,8 @@
 [new Date(2013, 0, 31, 2, 0, 0), 309, 82, undefined, 149],
 [new Date(2013, 0, 31, 20, 0, 0), 197, 144, undefined, 203],
 [new Date(2013, 0, 31, 21, 0, 0), 199, 141, 223, 210],
-[new Date(2013, 0, 31, 22, 0, 0), 188, undefined, undefined, undefined],
+[new Date(2013, 0, 31, 22, 0, 0), 188, 138, undefined, 213],
+[new Date(2013, 0, 31, 23, 0, 0), 177, 138, undefined, 178],
 [new Date(2013, 0, 31, 3, 0, 0), 255, 77, undefined, 136],
 [new Date(2013, 0, 31, 4, 0, 0), 231, 65, 253, 144],
 [new Date(2013, 0, 31, 5, 0, 0), 263, 65, 253, 136],
@@ -3531,7 +3532,9 @@
 [new Date(2013, 0, 9, 6, 0, 0), 55, 143, 275, 113],
 [new Date(2013, 0, 9, 7, 0, 0), 79, 155, 277, 117],
 [new Date(2013, 0, 9, 8, 0, 0), 115, 178, undefined, 128],
-[new Date(2013, 0, 9, 9, 0, 0), 118, undefined, undefined, 135]
+[new Date(2013, 0, 9, 9, 0, 0), 118, undefined, undefined, 135],
+[new Date(2013, 1, 1, 0, 0, 0), undefined, 136, 255, 157],
+[new Date(2013, 1, 1, 1, 0, 0), 205, undefined, 264, undefined]
         ]);
         return data;
     
