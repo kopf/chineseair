@@ -3557,7 +3557,8 @@
 [new Date(2013, 1, 1, 7, 0, 0), 65, 130, undefined, 173],
 [new Date(2013, 1, 1, 8, 0, 0), 84, 125, 263, 170],
 [new Date(2013, 1, 1, 9, 0, 0), 45, 148, undefined, 178],
-[new Date(2013, 1, 2, 0, 0, 0), 45, undefined, 364, undefined]
+[new Date(2013, 1, 2, 0, 0, 0), 45, 160, 364, 182],
+[new Date(2013, 1, 2, 1, 0, 0), 32, undefined, 388, undefined]
         ]);
         return data;
     
