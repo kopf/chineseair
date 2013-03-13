@@ -4310,7 +4310,7 @@
 [new Date(2013, 2, 13, 6, 0, 0), undefined, undefined, 255, 126],
 [new Date(2013, 2, 13, 7, 0, 0), undefined, undefined, 211, 144],
 [new Date(2013, 2, 13, 8, 0, 0), undefined, undefined, 204, 152],
-[new Date(2013, 2, 13, 9, 0, 0), undefined, undefined, 231, undefined],
+[new Date(2013, 2, 13, 9, 0, 0), undefined, undefined, 231, 155],
 [new Date(2013, 2, 2, 0, 0, 0), 32, 69, undefined, 169],
 [new Date(2013, 2, 2, 1, 0, 0), 36, 65, undefined, 166],
 [new Date(2013, 2, 2, 10, 0, 0), 55, 65, undefined, 45],
