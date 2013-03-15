@@ -4358,6 +4358,8 @@
 [new Date(2013, 2, 15, 14, 0, 0), 321, undefined, 230, 182],
 [new Date(2013, 2, 15, 15, 0, 0), 352, undefined, 204, 189],
 [new Date(2013, 2, 15, 16, 0, 0), 344, 94, 197, 188],
+[new Date(2013, 2, 15, 17, 0, 0), undefined, 103, undefined, 197],
+[new Date(2013, 2, 15, 18, 0, 0), 344, undefined, 199, undefined],
 [new Date(2013, 2, 15, 2, 0, 0), 255, 82, 200, 168],
 [new Date(2013, 2, 15, 3, 0, 0), 267, undefined, 212, 162],
 [new Date(2013, 2, 15, 4, 0, 0), 276, undefined, 224, 161],
