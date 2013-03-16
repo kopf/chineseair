@@ -4380,6 +4380,8 @@
 [new Date(2013, 2, 16, 4, 0, 0), 377, 117, undefined, 165],
 [new Date(2013, 2, 16, 5, 0, 0), 382, 123, undefined, 165],
 [new Date(2013, 2, 16, 6, 0, 0), 378, 125, undefined, 169],
+[new Date(2013, 2, 16, 7, 0, 0), undefined, 131, undefined, 166],
+[new Date(2013, 2, 16, 8, 0, 0), 375, undefined, undefined, undefined],
 [new Date(2013, 2, 2, 0, 0, 0), 32, 69, undefined, 169],
 [new Date(2013, 2, 2, 1, 0, 0), 36, 65, undefined, 166],
 [new Date(2013, 2, 2, 10, 0, 0), 55, 65, undefined, 45],
