@@ -4717,6 +4717,7 @@
 [new Date(2013, 2, 29, 5, 0, 0), 171, undefined, 186, 151],
 [new Date(2013, 2, 29, 6, 0, 0), 167, undefined, 181, 140],
 [new Date(2013, 2, 29, 7, 0, 0), 169, undefined, 182, undefined],
+[new Date(2013, 2, 29, 8, 0, 0), 180, undefined, undefined, undefined],
 [new Date(2013, 2, 3, 0, 0, 0), 207, 74, undefined, 72],
 [new Date(2013, 2, 3, 1, 0, 0), 211, 67, 161, 84],
 [new Date(2013, 2, 3, 10, 0, 0), 177, 146, 167, 99],
