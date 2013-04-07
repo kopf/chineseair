@@ -5100,7 +5100,8 @@
 [new Date(2013, 3, 7, 4, 0, 0), 149, 131, 146, 87],
 [new Date(2013, 3, 7, 5, 0, 0), 175, 135, 141, 92],
 [new Date(2013, 3, 7, 6, 0, 0), undefined, 138, 151, 82],
-[new Date(2013, 3, 7, 7, 0, 0), undefined, undefined, 148, undefined]
+[new Date(2013, 3, 7, 7, 0, 0), undefined, 148, 148, 102],
+[new Date(2013, 3, 7, 8, 0, 0), undefined, undefined, 156, undefined]
         ]);
         return data;
     
