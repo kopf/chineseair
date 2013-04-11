@@ -5005,6 +5005,8 @@
 [new Date(2013, 3, 11, 5, 0, 0), undefined, 164, undefined, 178],
 [new Date(2013, 3, 11, 6, 0, 0), undefined, 159, 143, 163],
 [new Date(2013, 3, 11, 7, 0, 0), undefined, 163, 154, 152],
+[new Date(2013, 3, 11, 8, 0, 0), undefined, 167, undefined, 152],
+[new Date(2013, 3, 11, 9, 0, 0), 45, undefined, 162, undefined],
 [new Date(2013, 3, 2, 0, 0, 0), 19, 161, undefined, 176],
 [new Date(2013, 3, 2, 1, 0, 0), 42, 160, undefined, 181],
 [new Date(2013, 3, 2, 10, 0, 0), 226, 152, 178, 199],
