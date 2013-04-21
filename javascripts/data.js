@@ -5264,6 +5264,7 @@
 [new Date(2013, 3, 20, 9, 0, 0), undefined, 69, undefined, undefined],
 [new Date(2013, 3, 21, 0, 0, 0), 171, 131, undefined, undefined],
 [new Date(2013, 3, 21, 1, 0, 0), 177, 125, undefined, undefined],
+[new Date(2013, 3, 21, 10, 0, 0), undefined, 136, undefined, undefined],
 [new Date(2013, 3, 21, 2, 0, 0), 178, 135, undefined, undefined],
 [new Date(2013, 3, 21, 3, 0, 0), 181, 125, undefined, undefined],
 [new Date(2013, 3, 21, 4, 0, 0), 179, 136, undefined, undefined],
