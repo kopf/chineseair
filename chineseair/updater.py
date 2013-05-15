@@ -29,13 +29,14 @@ def update_webpage():
     datapoints = []
     print 'Constructing JS...'
     for timestr, values in data.iteritems():
-        t = time.strptime(timestr[:15], '%m-%d-%Y %H:%M')
-        datapoints.append(datapoint.format(year=t.tm_year, month=t.tm_mon - 1,
-                                           date=t.tm_mday, hour=t.tm_hour,
-                                           beijing=values.get('beijingair', 'undefined'),
-                                           shanghai=values.get('CGShanghaiAir', 'undefined'),
-                                           chengdu=values.get('CGChengduAir', 'undefined'),
-                                           guangzhou=values.get('Guangzhou_Air', 'undefined')))
+        if ' to ' not in timestr:
+            t = time.strptime(timestr, '%m-%d-%Y %H:%M')
+            datapoints.append(datapoint.format(year=t.tm_year, month=t.tm_mon - 1,
+                                               date=t.tm_mday, hour=t.tm_hour,
+                                               beijing=values.get('beijingair', 'undefined'),
+                                               shanghai=values.get('CGShanghaiAir', 'undefined'),
+                                               chengdu=values.get('CGChengduAir', 'undefined'),
+                                               guangzhou=values.get('Guangzhou_Air', 'undefined')))
     datapoints = ',\n'.join(sorted(datapoints))
     js = '''
             function populateData(data) {
