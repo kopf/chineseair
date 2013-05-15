@@ -29,7 +29,7 @@ def update_webpage():
     datapoints = []
     print 'Constructing JS...'
     for timestr, values in data.iteritems():
-        t = time.strptime(timestr, '%m-%d-%Y %H:%M')
+        t = time.strptime(timestr[:15], '%m-%d-%Y %H:%M')
         datapoints.append(datapoint.format(year=t.tm_year, month=t.tm_mon - 1,
                                            date=t.tm_mday, hour=t.tm_hour,
                                            beijing=values.get('beijingair', 'undefined'),
