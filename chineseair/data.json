@@ -126,9 +126,6 @@
         "Guangzhou_Air": "128", 
         "CGShanghaiAir": "94"
     }, 
-    "05-04-2013 04:00 to 05-04-2013 11:59": {
-        "beijingair": "28"
-    }, 
     "12-06-2012 17:00": {
         "beijingair": "158", 
         "CGChengduAir": "260", 
@@ -257,9 +254,6 @@
         "CGChengduAir": "146", 
         "Guangzhou_Air": "79", 
         "CGShanghaiAir": "117"
-    }, 
-    "05-08-2013 16:00 to 05-08-2013 23:59": {
-        "beijingair": "13"
     }, 
     "02-04-2013 21:00": {
         "beijingair": "92", 
@@ -1144,9 +1138,6 @@
         "beijingair": "291", 
         "CGShanghaiAir": "121"
     }, 
-    "05-09-2013 04:00 to 05-09-2013 11:59": {
-        "beijingair": "17"
-    }, 
     "04-06-2013 15:00": {
         "beijingair": "55", 
         "Guangzhou_Air": "55", 
@@ -1858,9 +1849,6 @@
     }, 
     "11-04-2012 10:00": {
         "CGChengduAir": "180"
-    }, 
-    "04-30-2013 04:00 to 04-30-2013 11:59": {
-        "beijingair": "19"
     }, 
     "09-27-2012 15:00": {
         "CGChengduAir": "146", 
@@ -3860,9 +3848,6 @@
         "Guangzhou_Air": "185", 
         "CGShanghaiAir": "82"
     }, 
-    "05-06-2013 04:00 to 05-06-2013 11:59": {
-        "beijingair": "43"
-    }, 
     "11-15-2012 16:00": {
         "CGChengduAir": "183"
     }, 
@@ -5025,9 +5010,6 @@
         "Guangzhou_Air": "126", 
         "CGShanghaiAir": "94"
     }, 
-    "05-07-2013 04:00 to 05-07-2013 11:59": {
-        "beijingair": "25"
-    }, 
     "01-26-2013 10:00": {
         "beijingair": "169", 
         "CGChengduAir": "260", 
@@ -5215,9 +5197,6 @@
         "beijingair": "327", 
         "CGChengduAir": "176", 
         "Guangzhou_Air": "138"
-    }, 
-    "05-02-2013 04:00 to 05-02-2013 11:59": {
-        "beijingair": "23"
     }, 
     "12-25-2012 07:00": {
         "CGChengduAir": "184", 
@@ -10413,9 +10392,6 @@
         "Guangzhou_Air": "137", 
         "CGShanghaiAir": "181"
     }, 
-    "05-03-2013 04:00 to 05-03-2013 11:59": {
-        "beijingair": "24"
-    }, 
     "02-16-2013 17:00": {
         "beijingair": "217", 
         "CGChengduAir": "176", 
@@ -11280,9 +11256,6 @@
         "Guangzhou_Air": "167", 
         "CGShanghaiAir": "155"
     }, 
-    "05-01-2013 04:00 to 05-01-2013 11:59": {
-        "beijingair": "18"
-    }, 
     "10-12-2012 20:00": {
         "CGChengduAir": "170", 
         "Guangzhou_Air": "213"
@@ -11898,9 +11871,6 @@
         "CGChengduAir": "108", 
         "CGShanghaiAir": "55"
     }, 
-    "05-02-2013 16:00 to 05-02-2013 23:59": {
-        "beijingair": "14"
-    }, 
     "04-21-2013 19:00": {
         "CGShanghaiAir": "141"
     }, 
@@ -11985,9 +11955,6 @@
         "beijingair": "171", 
         "CGChengduAir": "178", 
         "Guangzhou_Air": "159"
-    }, 
-    "05-06-2013 16:00 to 05-06-2013 23:59": {
-        "beijingair": "32"
     }, 
     "01-11-2013 01:00": {
         "beijingair": "450", 
@@ -13852,9 +13819,6 @@
         "Guangzhou_Air": "94", 
         "CGShanghaiAir": "156"
     }, 
-    "05-07-2013 16:00 to 05-07-2013 23:59": {
-        "beijingair": "13"
-    }, 
     "03-01-2013 03:00": {
         "beijingair": "19", 
         "CGChengduAir": "163", 
@@ -15410,9 +15374,6 @@
         "Guangzhou_Air": "180", 
         "CGShanghaiAir": "62"
     }, 
-    "05-04-2013 16:00 to 05-04-2013 23:59": {
-        "beijingair": "4"
-    }, 
     "11-07-2012 04:00": {
         "CGChengduAir": "174", 
         "Guangzhou_Air": "131"
@@ -15560,9 +15521,6 @@
     }, 
     "11-02-2012 09:00": {
         "CGShanghaiAir": "67"
-    }, 
-    "05-08-2013 04:00 to 05-08-2013 11:59": {
-        "beijingair": "17"
     }, 
     "05-09-2013 17:00": {
         "beijingair": "153", 
@@ -16263,9 +16221,6 @@
         "beijingair": "184", 
         "Guangzhou_Air": "143", 
         "CGShanghaiAir": "92"
-    }, 
-    "05-05-2013 04:00 to 05-05-2013 11:59": {
-        "beijingair": "30"
     }, 
     "04-02-2013 20:00": {
         "beijingair": "178", 
@@ -19491,9 +19446,6 @@
         "Guangzhou_Air": "156", 
         "CGShanghaiAir": "79"
     }, 
-    "05-05-2013 16:00 to 05-05-2013 23:59": {
-        "beijingair": "8"
-    }, 
     "08-28-2012 23:00": {
         "Guangzhou_Air": "158"
     }, 
@@ -20909,9 +20861,6 @@
         "Guangzhou_Air": "60", 
         "CGShanghaiAir": "120"
     }, 
-    "05-03-2013 16:00 to 05-03-2013 23:59": {
-        "beijingair": "19"
-    }, 
     "05-03-2013 06:00": {
         "beijingair": "142", 
         "CGChengduAir": "212", 
@@ -21286,9 +21235,6 @@
     }, 
     "11-14-2012 02:00": {
         "Guangzhou_Air": "223"
-    }, 
-    "05-01-2013 16:00 to 05-01-2013 23:59": {
-        "beijingair": "13"
     }, 
     "12-27-2012 17:00": {
         "CGChengduAir": "164", 
@@ -24607,9 +24553,6 @@
     "09-17-2012 12:00": {
         "Guangzhou_Air": "110"
     }, 
-    "04-30-2013 16:00 to 04-30-2013 23:59": {
-        "beijingair": "12"
-    }, 
     "05-02-2013 20:00": {
         "beijingair": "171", 
         "CGChengduAir": "155", 
@@ -27552,9 +27495,6 @@
         "CGChengduAir": "220", 
         "Guangzhou_Air": "136", 
         "CGShanghaiAir": "155"
-    }, 
-    "04-29-2013 04:00 to 04-29-2013 11:59": {
-        "beijingair": "20"
     }, 
     "09-22-2012 15:00": {
         "beijingair": "169", 
