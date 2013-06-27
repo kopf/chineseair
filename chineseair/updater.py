@@ -67,20 +67,14 @@ def update_feeds():
 
 def update_data(feed, all_data):
     tweets = requests.get(
-        'http://greptweet.com/u/{feed}/{feed}.txt'.format(feed=feed))
+        'http://greptweet.com/u/{feed}/{feed}.txt'.format(feed=feed.lower()))
     for line in tweets.text.split('\n'):
         try:
             time, value = process_tweet(line)
         except ValueError:
             continue
 
-        if time in all_data:
-            if feed in all_data[time]:
-                break
-            else:
-                all_data[time][feed] = value
-        else:
-            all_data[time] = {feed: value}
+        all_data.setdefault(time, {}).setdefault(feed, value)
     return all_data
 
 
