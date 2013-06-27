@@ -5,14 +5,11 @@ import json
 import os
 import time
 
-import twitter
+import requests
 
 
 FEEDS = ['beijingair', 'CGShanghaiAir', 'CGChengduAir', 'Guangzhou_Air']
 
-with open('auth.json') as f:
-    AUTH = json.loads(f.read())
-API = twitter.Api(**AUTH)
 
 def update_webpage():
     print 'Updating webpage...'
@@ -52,56 +49,52 @@ def update_webpage():
 def update_feeds():
     filename = 'data.json'
     if not os.path.exists(filename):
-        total_data = {}
+        all_data = {}
     else:
         with open(filename, 'r') as f:
-            total_data = json.loads(f.read())
+            all_data = json.loads(f.read())
 
-    finished = {}
     for feed in FEEDS:
-        finished[feed] = False
-    page = 1
-
-    while not all([state for _, state in finished.iteritems()]):
-        for feed in FEEDS:
-            print 'Getting page {0} of tweets for {1}'.format(page, feed)
-            finished[feed], total_data = get_new_tweets(feed, page, total_data)
-        page += 1
+        print 'Forcing an update of twitter feed {0} on greptweet.com...'.format(feed)
+        requests.get('http://greptweet.com/f/{0}'.format(feed))
+        print 'Processing data...'
+        all_data = update_data(feed, all_data)
 
     print 'Saving %s' % filename
     with open(filename, 'w') as f:
-        f.write(json.dumps(total_data, indent=4))
+        f.write(json.dumps(all_data, indent=4))
 
 
-def get_new_tweets(feed, page, total_data):
-    tweets = API.GetUserTimeline(feed, count=200, page=page)
-    if not tweets:
-        return True, total_data
-    finished = False
-    for tweet in tweets:
+def update_data(feed, all_data):
+    tweets = requests.get(
+        'http://greptweet.com/u/{feed}/{feed}.txt'.format(feed=feed))
+    for line in tweets.text.split('\n'):
         try:
-            time, value = process_tweet(tweet)
+            time, value = process_tweet(line)
         except ValueError:
             continue
 
-        if time in total_data:
-            if feed in total_data[time]:
-                finished = True
+        if time in all_data:
+            if feed in all_data[time]:
                 break
             else:
-                total_data[time][feed] = value
+                all_data[time][feed] = value
         else:
-            total_data[time] = {feed: value}
-    return finished, total_data
+            all_data[time] = {feed: value}
+    return all_data
 
 
-def process_tweet(tweet):
-    processed = tweet.text.split('; ')
-    if '24hr avg' in tweet.text:
+def process_tweet(text):
+    segments = text.split('; ')
+    if '24hr avg' in text:
         raise ValueError('Tweet is an average value')
-    if 'No Reading' in tweet.text or 'No Data' in tweet.text or len(processed) < 5:
+    if 'No Reading' in text or 'No Data' in text or len(segments) < 5:
         raise ValueError('Tweet contained no value')
-    return processed[0], processed[3]
+    
+    time = segments[0].split('|')[-1]
+    value = segments[3]
+    
+    return time, value
 
 
 if __name__ == '__main__':
