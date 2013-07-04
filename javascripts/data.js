@@ -8336,6 +8336,7 @@
 [new Date(2013, 6, 4, 10, 0, 0), 63, undefined, undefined, 76],
 [new Date(2013, 6, 4, 11, 0, 0), 66, 102, undefined, 91],
 [new Date(2013, 6, 4, 12, 0, 0), 80, 91, undefined, 78],
+[new Date(2013, 6, 4, 13, 0, 0), 61, 87, undefined, 80],
 [new Date(2013, 6, 4, 2, 0, 0), 134, 95, undefined, 42],
 [new Date(2013, 6, 4, 3, 0, 0), 82, 93, undefined, 42],
 [new Date(2013, 6, 4, 4, 0, 0), 82, 112, undefined, 66],
