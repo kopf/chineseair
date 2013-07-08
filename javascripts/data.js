@@ -8437,6 +8437,7 @@
 [new Date(2013, 6, 8, 15, 0, 0), 167, 152, 167, undefined],
 [new Date(2013, 6, 8, 16, 0, 0), 164, 119, 171, undefined],
 [new Date(2013, 6, 8, 17, 0, 0), 169, 129, 154, undefined],
+[new Date(2013, 6, 8, 18, 0, 0), 176, 129, 152, undefined],
 [new Date(2013, 6, 8, 2, 0, 0), 163, 76, 172, undefined],
 [new Date(2013, 6, 8, 3, 0, 0), 155, 74, 171, undefined],
 [new Date(2013, 6, 8, 4, 0, 0), 154, 74, 170, undefined],
