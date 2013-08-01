@@ -9005,6 +9005,7 @@
 [new Date(2013, 7, 1, 13, 0, 0), 124, 97, 93, undefined],
 [new Date(2013, 7, 1, 14, 0, 0), 110, 99, 59, undefined],
 [new Date(2013, 7, 1, 15, 0, 0), 127, 95, 61, undefined],
+[new Date(2013, 7, 1, 16, 0, 0), 117, 87, 53, undefined],
 [new Date(2013, 7, 1, 2, 0, 0), 91, 78, 163, undefined],
 [new Date(2013, 7, 1, 3, 0, 0), 91, 82, 171, undefined],
 [new Date(2013, 7, 1, 4, 0, 0), 107, 93, 169, undefined],
