@@ -9082,6 +9082,7 @@
 [new Date(2013, 7, 4, 18, 0, 0), 185, 91, 134, undefined],
 [new Date(2013, 7, 4, 19, 0, 0), 219, undefined, 117, undefined],
 [new Date(2013, 7, 4, 2, 0, 0), 166, 53, 84, undefined],
+[new Date(2013, 7, 4, 20, 0, 0), 197, undefined, 152, undefined],
 [new Date(2013, 7, 4, 3, 0, 0), 169, 70, 53, undefined],
 [new Date(2013, 7, 4, 4, 0, 0), 167, 42, 93, undefined],
 [new Date(2013, 7, 4, 5, 0, 0), 174, 59, 105, undefined],
