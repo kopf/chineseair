@@ -9340,6 +9340,7 @@
 [new Date(2013, 7, 22, 4, 0, 0), 197, 50, 188, 164],
 [new Date(2013, 7, 22, 5, 0, 0), undefined, 50, 182, 157],
 [new Date(2013, 7, 22, 6, 0, 0), undefined, 50, 186, 161],
+[new Date(2013, 7, 22, 7, 0, 0), undefined, 53, 187, 163],
 [new Date(2013, 7, 3, 0, 0, 0), 93, 8, 139, undefined],
 [new Date(2013, 7, 3, 1, 0, 0), 93, undefined, 154, undefined],
 [new Date(2013, 7, 3, 10, 0, 0), 78, 66, 171, undefined],
