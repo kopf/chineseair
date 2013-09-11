@@ -9800,6 +9800,7 @@
 [new Date(2013, 8, 11, 16, 0, 0), 160, 115, 122, undefined],
 [new Date(2013, 8, 11, 17, 0, 0), 160, 122, 84, undefined],
 [new Date(2013, 8, 11, 18, 0, 0), undefined, 117, 91, undefined],
+[new Date(2013, 8, 11, 19, 0, 0), 181, 129, 91, 87],
 [new Date(2013, 8, 11, 2, 0, 0), 167, 91, 172, undefined],
 [new Date(2013, 8, 11, 3, 0, 0), 137, 95, 99, undefined],
 [new Date(2013, 8, 11, 4, 0, 0), 110, 93, 89, undefined],
