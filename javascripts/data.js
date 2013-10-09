@@ -10660,7 +10660,8 @@
 [new Date(2013, 9, 9, 4, 0, 0), 170, 122, 197, 115],
 [new Date(2013, 9, 9, 5, 0, 0), 170, 97, 198, 110],
 [new Date(2013, 9, 9, 6, 0, 0), 173, 102, 198, undefined],
-[new Date(2013, 9, 9, 7, 0, 0), 175, undefined, 194, undefined]
+[new Date(2013, 9, 9, 7, 0, 0), 175, undefined, 194, undefined],
+[new Date(2013, 9, 9, 8, 0, 0), 181, undefined, 196, 112]
         ]);
         return data;
     
