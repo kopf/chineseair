@@ -10805,6 +10805,7 @@
 [new Date(2013, 9, 22, 5, 0, 0), 237, 156, undefined, 160],
 [new Date(2013, 9, 22, 6, 0, 0), 243, 160, undefined, 161],
 [new Date(2013, 9, 22, 7, 0, 0), 234, 158, undefined, 161],
+[new Date(2013, 9, 22, 8, 0, 0), 224, 157, undefined, 162],
 [new Date(2013, 9, 3, 0, 0, 0), 119, 42, 162, undefined],
 [new Date(2013, 9, 3, 1, 0, 0), 117, 57, 162, undefined],
 [new Date(2013, 9, 3, 10, 0, 0), 171, 50, 222, undefined],
