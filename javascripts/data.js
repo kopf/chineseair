@@ -10951,6 +10951,7 @@
 [new Date(2013, 9, 28, 15, 0, 0), 320, 84, undefined, undefined],
 [new Date(2013, 9, 28, 16, 0, 0), 342, 91, undefined, undefined],
 [new Date(2013, 9, 28, 17, 0, 0), 371, 110, undefined, undefined],
+[new Date(2013, 9, 28, 18, 0, 0), undefined, 134, undefined, undefined],
 [new Date(2013, 9, 28, 2, 0, 0), 398, 93, undefined, undefined],
 [new Date(2013, 9, 28, 3, 0, 0), 368, 102, undefined, undefined],
 [new Date(2013, 9, 28, 4, 0, 0), 320, 110, undefined, undefined],
