@@ -5370,6 +5370,7 @@
 [new Date(2013, 10, 1, 1, 0, 0), 339, 87, undefined, 166],
 [new Date(2013, 10, 1, 10, 0, 0), 197, 89, undefined, 169],
 [new Date(2013, 10, 1, 11, 0, 0), 216, 95, undefined, 170],
+[new Date(2013, 10, 1, 12, 0, 0), 239, 91, undefined, 170],
 [new Date(2013, 10, 1, 2, 0, 0), 361, 78, undefined, 177],
 [new Date(2013, 10, 1, 3, 0, 0), 349, 74, undefined, 178],
 [new Date(2013, 10, 1, 4, 0, 0), 358, 76, undefined, 173],
