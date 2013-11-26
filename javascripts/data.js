@@ -5800,6 +5800,7 @@
 [new Date(2013, 10, 26, 1, 0, 0), 154, 165, undefined, 84],
 [new Date(2013, 10, 26, 10, 0, 0), 59, 176, undefined, 97],
 [new Date(2013, 10, 26, 11, 0, 0), 59, 167, undefined, 93],
+[new Date(2013, 10, 26, 12, 0, 0), 53, 162, undefined, 107],
 [new Date(2013, 10, 26, 2, 0, 0), 172, 167, undefined, 93],
 [new Date(2013, 10, 26, 3, 0, 0), 163, 169, undefined, 76],
 [new Date(2013, 10, 26, 4, 0, 0), 139, 177, undefined, 72],
