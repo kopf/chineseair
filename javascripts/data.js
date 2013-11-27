@@ -5835,6 +5835,7 @@
 [new Date(2013, 10, 27, 2, 0, 0), 25, 162, undefined, 173],
 [new Date(2013, 10, 27, 20, 0, 0), 38, 156, undefined, 97],
 [new Date(2013, 10, 27, 21, 0, 0), 38, 153, undefined, 84],
+[new Date(2013, 10, 27, 22, 0, 0), 29, 155, undefined, 57],
 [new Date(2013, 10, 27, 3, 0, 0), 13, 167, undefined, 166],
 [new Date(2013, 10, 27, 4, 0, 0), 21, 159, undefined, 166],
 [new Date(2013, 10, 27, 5, 0, 0), 21, 151, undefined, 161],
