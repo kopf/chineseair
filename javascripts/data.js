@@ -6090,6 +6090,7 @@
 [new Date(2013, 11, 1, 11, 0, 0), 158, 271, undefined, 80],
 [new Date(2013, 11, 1, 12, 0, 0), 119, 260, undefined, 91],
 [new Date(2013, 11, 1, 13, 0, 0), 107, 212, undefined, 93],
+[new Date(2013, 11, 1, 14, 0, 0), 122, 212, undefined, 93],
 [new Date(2013, 11, 1, 2, 0, 0), 102, 206, undefined, 87],
 [new Date(2013, 11, 1, 3, 0, 0), 127, 221, undefined, 97],
 [new Date(2013, 11, 1, 4, 0, 0), 152, 229, undefined, 89],
