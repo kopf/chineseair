@@ -13006,6 +13006,7 @@
 [new Date(2014, 0, 22, 0, 0, 0), undefined, 107, 189, 99],
 [new Date(2014, 0, 22, 1, 0, 0), undefined, 105, 188, 87],
 [new Date(2014, 0, 22, 10, 0, 0), undefined, 154, 282, 132],
+[new Date(2014, 0, 22, 11, 0, 0), undefined, 155, 297, 124],
 [new Date(2014, 0, 22, 2, 0, 0), undefined, 102, 194, 93],
 [new Date(2014, 0, 22, 3, 0, 0), undefined, 110, 237, 112],
 [new Date(2014, 0, 22, 4, 0, 0), undefined, 102, 238, 124],
