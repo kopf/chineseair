@@ -13130,6 +13130,7 @@
 [new Date(2014, 0, 27, 5, 0, 0), 178, undefined, undefined, 167],
 [new Date(2014, 0, 27, 6, 0, 0), 179, undefined, 278, undefined],
 [new Date(2014, 0, 27, 7, 0, 0), 184, undefined, 267, 166],
+[new Date(2014, 0, 27, 8, 0, 0), 187, 68, undefined, undefined],
 [new Date(2014, 0, 3, 0, 0, 0), 314, 158, 288, 203],
 [new Date(2014, 0, 3, 1, 0, 0), 270, 159, 279, 197],
 [new Date(2014, 0, 3, 10, 0, 0), 102, 203, 240, 207],
