@@ -15243,6 +15243,7 @@
 [new Date(2014, 3, 25, 2, 0, 0), 196, 89, 139, undefined],
 [new Date(2014, 3, 25, 20, 0, 0), 174, 97, 172, undefined],
 [new Date(2014, 3, 25, 21, 0, 0), 176, 93, 160, undefined],
+[new Date(2014, 3, 25, 22, 0, 0), 170, 72, 164, undefined],
 [new Date(2014, 3, 25, 3, 0, 0), 205, 89, 129, undefined],
 [new Date(2014, 3, 25, 4, 0, 0), 195, 93, 137, undefined],
 [new Date(2014, 3, 25, 5, 0, 0), 179, 91, 167, undefined],
