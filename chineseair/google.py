@@ -1,4 +1,16 @@
+import json
+
 import requests
+
+
+COLUMNS = ['Time', 'Beijing', 'Shanghai', 'Chengdu', 'Guangzhou']
+
+class ConnectionError(Exception):
+    pass
+
+
+class ResponseError(Exception):
+    pass
 
 
 class FusionTable(object):
@@ -21,27 +33,29 @@ class FusionTable(object):
         if not self.token:
             raise ConnectionError('Unable to obtain Google API Token')
 
-    def upsert(time, values):
+    def upsert(self, time, values):
         """Upserts a row, accepting a values dict of form {column_name: value}
         Returns True if upserted, otherwise False if all data was already present"""
         resp = self.get_row_by_time(time)
         if 'rows' in resp:
+            rowid = resp['rows'][0][0]
             if self._all_values_already_added(resp, values):
                 return False
-            self._update(time, values)
+            self._update(rowid, values)
         else:
             self._insert(time, values)
         return True
 
-    def get_row_by_time(time):
+    def get_row_by_time(self, time):
         """Selects rows, filtering by time. 
         Helper function to ensure single quotes (NOT double quotes) are used
         inside sql query
         """
-        sql = "SELECT * FROM {0} WHERE Time='{1}'".format(TABLE_ID, time)
+        sql = "SELECT ROWID, {0} FROM {1} WHERE Time='{2}'".format(
+            ', '.join(COLUMNS), self.table_id, time)
         return self._perform_sql(sql)
 
-    def _all_values_already_added(resp, values):
+    def _all_values_already_added(self, resp, values):
         """Parse a SELECT response, compare with values to be upserted, checking
         if we really need to upsert anything at all"""
         present_row = {}
@@ -49,17 +63,18 @@ class FusionTable(object):
         for colname in resp['columns']:
             present_row[colname] = resp['rows'][0][i]
             i += 1
-        present_row.pop('Time')
+        del present_row['Time']
+        del present_row['rowid']
         return present_row == values
 
-    def _update(time, values):
+    def _update(self, rowid, values):
         """Performs an UPDATE operation"""
-        sql = "UPDATE {table_id} SET {values} WHERE Time='{time}'".format(
-            table_id=self.table_id, time=time,
+        sql = "UPDATE {table_id} SET {values} WHERE ROWID='{rowid}'".format(
+            table_id=self.table_id, rowid=rowid,
             values=', '.join(['{0}={1}'.format(k, v) for k, v in values.iteritems()]))
         return self._perform_sql(sql)
 
-    def _insert(time, value_dict):
+    def _insert(self, time, value_dict):
         """Performs an INSERT operation"""
         columns = values = []
         for column, value in value_dict.iteritems():
@@ -71,14 +86,14 @@ class FusionTable(object):
             values=', '.join(values))
         return self._perform_sql(sql)
 
-    def _perform_sql(sql):
+    def _perform_sql(self, sql):
         """Submits a SQL query to Google Fusion Tables"""
         resp = requests.post(
             self.base_url.format(sql=sql),
             headers={'Authorization': 'GoogleLogin {0}'.format(self.token)})
         return self._parse(resp)
 
-    def _parse(resp):
+    def _parse(self, resp):
         """Parse a response from Google Fusion Tables"""
         if not 200 <= resp.status_code < 300:
             msg = ('Invalid response from Google Fusion Tables:\n'
