@@ -33,4 +33,4 @@ def get_row_by_time(time):
     sql query
     """
     sql = "SELECT * FROM {0} WHERE Time='{1}'".format(TABLE_ID, time)
-    return perform_sql(sql)
+    return perform_sql(sql, get_auth_token())
