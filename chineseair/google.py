@@ -1,4 +1,6 @@
+import itertools
 import json
+import time
 
 import logbook
 import requests
@@ -14,11 +16,14 @@ class ConnectionError(Exception):
 class ResponseError(Exception):
     pass
 
+class RateLimitExceeded(Exception):
+    pass
+
 
 def split_list(iterable, n):
     """Split list into groups of n items: http://stackoverflow.com/a/1625013/221001"""
     args = [iter(iterable)] * n
-    return ([e for e in t if e != None] for t in itertools.zip_longest(*args))
+    return ([e for e in t if e != None] for t in itertools.izip_longest(*args))
 
 
 class FusionTable(object):
@@ -28,7 +33,7 @@ class FusionTable(object):
         log.info('Connecting to table {0}'.format(table_id))
         self.table_id = table_id
         self.base_url = ("https://www.googleapis.com/fusiontables/v1/query"
-                         "?&key={0}".format(api_key) + '&sql={sql}')
+                         "?&key={0}".format(api_key))
         resp = requests.post(
             'https://www.google.com/accounts/ClientLogin',
             headers={'Content-type': 'application/x-www-form-urlencoded'},
@@ -92,35 +97,47 @@ class FusionTable(object):
 
     def _create_update_sql(self, rowid, values):
         """Performs an UPDATE operation"""
-        sql = "UPDATE {table_id} SET {values} WHERE ROWID='{rowid}';".format(
+        sql = "UPDATE {table_id} SET {values} WHERE ROWID='{rowid}'; ".format(
             table_id=self.table_id, rowid=rowid,
             values=', '.join(['{0}={1}'.format(k, v) for k, v in values.iteritems()]))
         return sql
 
     def _create_insert_sql(self, time, value_dict):
         """Performs an INSERT operation"""
-        columns = values = []
+        columns = []
+        values = []
         for column, value in value_dict.iteritems():
             columns.append(column)
             values.append(value)
 
-        sql = "INSERT INTO {table_id} ({columns}) VALUES ({values});".format(
+        sql = "INSERT INTO {table_id} (Time, {columns}) VALUES ('{time}', {values}); ".format(
             table_id=self.table_id, columns=', '.join(columns),
-            values=', '.join(values))
+            values=', '.join(values), time=time)
         return sql
 
     def _perform_sql(self, sql):
         """Submits a SQL query to Google Fusion Tables"""
         resp = requests.post(
-            self.base_url.format(sql=sql),
-            headers={'Authorization': 'GoogleLogin {0}'.format(self.token)})
-        return self._parse(resp)
+            self.base_url,
+            headers={'Authorization': 'GoogleLogin {0}'.format(self.token)},
+            data={'sql': sql})
+        try:
+            retval = self._parse(resp)
+        except RateLimitExceeded:
+            log.error('Rate limit exceeded. Sleeping for 20 seconds.')
+            time.sleep(20)
+            return self._perform_sql(sql)
+        return retval
 
     def _parse(self, resp):
         """Parse a response from Google Fusion Tables"""
         if not 200 <= resp.status_code < 300:
-            msg = ('Invalid response from Google Fusion Tables:\n'
-                   'Status code: {0}\n'
-                   'Data: {1}')
-            raise ResponseError(msg.format(resp.status_code, resp.text))
+            msg = (u'Invalid response from Google Fusion Tables:\n'
+                   u'Status code: {0}\n'
+                   u'Data: {1}')
+            if resp.status_code == 403:
+                raise RateLimitExceeded()
+            else:
+                log.error(msg.format(resp.status_code, resp.text))
+                raise ResponseError()
         return json.loads(resp.text)
