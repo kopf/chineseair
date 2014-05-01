@@ -75,14 +75,13 @@ class FusionTable(object):
 
     def bulk_insert(self, values):
         """Perform a bulk INSERT of values of the form
-        {'time': '1990-01-01 12:00:00', 'city': 'Beijing', 'value': '200'}
+        {'time': '1990-01-01 12:00:00', 'Beijing': '200', 'Shanghai': 47}
         """
         log.info('Performing a bulk insert of {0} rows'.format(len(values)))
         for group in split_list(values, 500):
             sql = ''
             for row in group:
-                sql += self._create_insert_sql(
-                    row['time'], {row['city']: row['value']})
+                sql += self._create_insert_sql(row.pop('time'), row)
             self._perform_sql(sql)
             log.info('Inserted 500 records')
 
