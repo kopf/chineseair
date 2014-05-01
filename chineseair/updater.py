@@ -27,15 +27,17 @@ def get_fusiontable():
 
 def parse_feeds():
     retval = {}
-    for city, url in FEEDS:
+    for city, url in FEEDS.iteritems():
         log.info('Parsing {0}'.format(url))
         xml = requests.get(url).text
         soup = BeautifulSoup(xml)
         for reading in soup.findAll('item'):
+            value = reading.aqi.text
+            if value == '-999':
+                continue
             time = datetime.strptime(reading.readingdatetime.text,
                                      '%m/%d/%Y %I:%M:%S %p')
             time = time.strftime('%Y-%m-%d %H:%M:%S')
-            value = reading.aqi.text
             retval.setdefault(time, {})
             retval[time][city] = value
     return retval
