@@ -19,7 +19,7 @@ class UnknownError(Exception):
 class RateLimitExceeded(Exception):
     pass
 
-class InternalServerError(Exception):
+class RemoteServerError(Exception):
     pass
 
 
@@ -129,8 +129,8 @@ class FusionTable(object):
             log.error('Rate limit exceeded. Sleeping for 20 seconds.')
             time.sleep(20)
             return self._perform_sql(sql)
-        except InternalServerError:
-            log.error('Internal Server Error. Retrying after 5 seconds.')
+        except RemoteServerError:
+            log.error('Remote Server Error. Retrying after 5 seconds.')
             time.sleep(5)
             return self._perform_sql(sql)
         return retval
@@ -143,8 +143,8 @@ class FusionTable(object):
                    u'Data: {1}')
             if resp.status_code == 403:
                 raise RateLimitExceeded()
-            elif resp.status_code == 500:
-                raise InternalServerError()
+            elif resp.status_code >= 500:
+                raise RemoteServerError()
             else:
                 log.error(msg.format(resp.status_code, resp.text))
                 raise UnknownError()
