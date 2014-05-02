@@ -10,7 +10,7 @@ from google import FusionTable
 
 
 TABLE_ID = '14BwrqWVcFIEZSVSa15TlkqTsLYqLO6BXJkWzhu60'
-AUTH = json.loads(open('auth.json', 'r').read())
+AUTH = json.loads(open('/home/kopf/chineseair/chineseair/auth.json', 'r').read())
 FEEDS = {
     'Beijing': 'http://www.stateair.net/web/rss/1/1.xml',
     'Chengdu': 'http://www.stateair.net/web/rss/1/2.xml',
