@@ -119,10 +119,15 @@ class FusionTable(object):
 
     def _perform_sql(self, sql):
         """Submits a SQL query to Google Fusion Tables"""
-        resp = requests.post(
-            self.base_url,
-            headers={'Authorization': 'GoogleLogin {0}'.format(self.token)},
-            data={'sql': sql})
+        try:
+            resp = requests.post(
+                self.base_url,
+                headers={'Authorization': 'GoogleLogin {0}'.format(self.token)},
+                data={'sql': sql})
+        except requests.exceptions.ConnectionError:
+            log.error('Timeout occurred POSTing data to Fusion Table. Retrying...')
+            time.sleep(5)
+            return self._perform_sql(sql)
         try:
             retval = self._parse(resp)
         except RateLimitExceeded:
