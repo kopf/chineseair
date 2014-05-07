@@ -131,7 +131,7 @@ class FusionTable(object):
         try:
             retval = self._parse(resp)
         except RateLimitExceeded:
-            log.error('Rate limit exceeded. Sleeping for 20 seconds.')
+            log.error('Rate limit exceeded. Sleeping for {0} seconds.'.format(str((retries+1)*20)))
             time.sleep(retries*20)
             return self._perform_sql(sql, retries=retries+1)
         except RemoteServerError:
