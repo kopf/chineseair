@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import sys
 
 from updater import get_fusiontable
@@ -8,25 +9,20 @@ def parse(line):
     line = line.split(',')
     return {'city': line[0], 'time': line[2] + ':00', 'value': line[7]}
 
-def process(filename, upserts):
+def process(filenames):
     """Process an entire CSV file from stateair.net"""
     table = get_fusiontable()
-    data = open(filename, 'r').read()
-    datapoints = []
-    for line in data.split('\n'):
-        if 'Valid' in line:
-            datapoints.append(parse(line))
-    if upserts:
-        for datapoint in datapoints:
-            table.upsert(
-                datapoint['time'], {datapoint['city']: datapoint['value']})
-    else:
-        table.bulk_insert(datapoints)
+    datapoints = {}
+    for filename in filenames:
+        data = open(filename, 'r').read()
+        for line in data.split('\n'):
+            if 'Valid' in line:
+                datapoint = parse(line)
+                datapoints.setdefault(datapoint['time'], {})
+                datapoints[datapoint['time']][datapoint['city']] = datapoint['value']
+    for time, values in datapoints.iteritems():
+        table.upsert(time, values)
 
 
 if __name__ == '__main__':
-    print 'Perform all Upserts or Inserts? (U for upserts, I for inserts) '
-    upserts = None
-    while upserts not in ['U', 'I']:
-        upserts = raw_input()
-    process(sys.argv[-1], upserts=upserts=='U')
+    process([f for f in sys.argv if f.endswith('.csv')])
