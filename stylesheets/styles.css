@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
 #donate_buttons {
   float:right;
+  margin-top:-50px;
 }
 body {
   padding:50px;
