@@ -33,7 +33,7 @@ def parse_feeds():
         soup = BeautifulSoup(xml)
         for reading in soup.findAll('item'):
             value = reading.aqi.text
-            if value == '-999':
+            if int(value) < 0:
                 continue
             time = datetime.strptime(reading.readingdatetime.text,
                                      '%m/%d/%Y %I:%M:%S %p')
