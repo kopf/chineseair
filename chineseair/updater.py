@@ -32,7 +32,12 @@ def parse_feeds():
         xml = requests.get(url).text
         soup = BeautifulSoup(xml)
         for reading in soup.findAll('item'):
-            value = reading.aqi.text
+            try:
+                value = reading.aqi.text
+            except AttributeError:
+                # Sometimes there's no AQI field for an item, e.g. when
+                # the embassy posts an announcement in the RSS feed.
+                continue
             if int(value) < 0:
                 continue
             time = datetime.strptime(reading.readingdatetime.text,
