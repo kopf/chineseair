@@ -1,3 +1,18 @@
+# Notice
+
+I've stopped maintaining this tool/website, as Google changed their API for Fusion Tables and I simply don't have the
+spare time to spend updating this project so it keeps running. 
+
+You can get detailed air quality information at http://aqicn.org/ 
+
+You can also have a look at the raw data my tool gathered over the years at:
+
+https://www.google.com/fusiontables/DataSource?docid=14BwrqWVcFIEZSVSa15TlkqTsLYqLO6BXJkWzhu60
+
+
+What follows is the old `README.md`:
+
+
 # [Chinese Air](http://kopf.github.com/chineseair/)
 
 Graphing air quality readings from several major Chinese centers: Beijing, Shanghai, Guangzhou, Chengdu & Shenyang.
